@@ -18,12 +18,12 @@ const fillDrone = async () => {
       { name: "Courier 3000i", propellers: 6, maxSpeed: 18 },
     ];
     await Drone.create(newDrones);
-    console.log(`Inserted ${newDrones.length} drones`);
-  } catch (error) {
-    return error;
+    console.log(`Inserted ${newDrones.length}`);
+  } catch (err) {
+    return err;
   }
 
-  console.log("Disconnecting from the database...");
+  console.log("Disconnecting from mongoose");
   mongoose.disconnect();
 };
 
